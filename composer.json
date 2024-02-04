@@ -2,7 +2,7 @@
     "minimum-stability": "stable",
     "name": "givinghawk/easyserve",
     "description": "A simple PHP applicaiton for serving web pages.",
-    "license": "GNU GPLv3",
+    "license": "GPL-3.0-only",
     "require": {
         "erusev/parsedown": "^1.7"
     }
