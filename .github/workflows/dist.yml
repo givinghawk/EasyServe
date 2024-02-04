@@ -46,7 +46,8 @@ jobs:
       - name: Commit changes
         run: |
           git config --global user.name "givinghawk"
-          git config --global user.email "me@givinghawk.dev"
+          git config --global user.email 'givinghawk@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git pull --no-commit          
           git add dist/*
           git add version.txt
