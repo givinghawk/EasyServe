@@ -1,0 +1,8 @@
+.idea/
+node_modules/
+vendor/
+content/
+data/
+composer.lock
+application_error.log
+config.php

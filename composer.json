@@ -1,0 +1,10 @@
+{
+    "require": {
+        "twig/twig": "^3.5",
+        "ext-mysqli": "*"
+    },
+    "minimum-stability": "stable",
+    "name": "givinghawk/",
+    "description": "Shortlink system by Givinghawk",
+    "license": "proprietary"
+}
