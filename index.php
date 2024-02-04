@@ -1,7 +1,10 @@
 <?php
 require 'src/errorController.php';
+require 'src/prepController.php';
 require 'config.php';
+require 'vendor/autoload.php';
 $errorController = new ErrorController();
+$prep = new PrepController();
 
 // General initialisation
 require __DIR__ . '/src/init.php';
@@ -23,13 +26,13 @@ if (count($errs) > 0) {
 
 if ($mode == 'md') {
     $Parsedown = new Parsedown();
-    if ($errorController->fileExists($content_dir . '/' . $page . '.md')) {
-        echo $Parsedown->text(file_get_contents(__DIR__ . '/' . $content_dir . '/' . $page . '.md'));
+    if ($errorController->fileExists(__DIR__.'/'.$content_dir . '/' . $page . '.md')) {
+        $prep->serveMarkdown($Parsedown->text(file_get_contents(__DIR__ . '/' . $content_dir . '/' . $page . '.md')), ucfirst($page));
     } else {
         die();
     }
 } else if ($mode == 'html') {
-    if ($errorController->fileExists($content_dir . '/' . $page . '.html')) {
+    if ($errorController->fileExists(__DIR__.'/'.$content_dir . '/' . $page . '.html')) {
         echo file_get_contents(__DIR__ . '/' . $content_dir . '/' . $page . '.html');
     } else {
         die();

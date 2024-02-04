@@ -9,22 +9,20 @@ class ErrorController
     {
         set_error_handler(function ($errno, $errstr, $errfile, $errline) {
             if (in_array($errno, [E_NOTICE, E_WARNING, E_DEPRECATED])) return;
-            $log = fopen(__DIR__ . '/application_error.log', 'a');
+            $log = fopen(__DIR__ . '/../application_error.log', 'a');
             fwrite($log, '[' . date('Y-m-d H:i:s') . '] ' . $errstr . ' in ' . $errfile . ' on line ' . $errline . PHP_EOL);
             fclose($log);
             $fullstr = "Aw shucks your thingy doesn't work, contact the developer :(";
-            $arg = urlencode($fullstr);
-            throwError($arg);
+            $this->throwError($fullstr);
             die();
         });
 
         set_exception_handler(function ($e) {
-            $log = fopen(__DIR__ . '/application_error.log', 'a');
+            $log = fopen(__DIR__ . '/../application_error.log', 'a');
             fwrite($log, '[' . date('Y-m-d H:i:s') . '] ' . $e->getMessage() . ' in ' . $e->getFile() . ' on line ' . $e->getLine() . PHP_EOL);
             fclose($log);
             $fullstr = "Aw shucks your thingy doesn't work, contact the developer :(";
-            $arg = urlencode($fullstr);
-            throwError($arg);
+            $this->throwError($fullstr);
             die();
         });
     }
@@ -51,7 +49,7 @@ class ErrorController
 
     public function fileExists($path)
     {
-        if (!is_file(__DIR__.'../' . $path)) {
+        if (!is_file($path)) {
             $this->throwError('The page <code class="text-red-400 font-mono bg-gray-700 rounded p-1">' . $path . '</code> was not found.');
             return false;
         } else {

@@ -6,7 +6,7 @@ EasyServe is a lightweight web server designed to simplify the process of servin
 
 - Serve HTML pages without the .html extension.
 - Built-in HTML validation to ensure compliance with standards.
-- Coming soon: Markdown support for easy content creation.
+- Markdown support for easy content creation.
 
 ## Getting Started
 
