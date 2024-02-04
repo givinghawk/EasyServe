@@ -1,0 +1,57 @@
+name: Package Files
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Prep
+        run: |
+          rm -rf dist
+          mkdir dist
+
+      - name: Delete previous dist directory
+        run: rm -rf dist
+
+      - name: Create version file
+        run: |
+          echo "${{ github.sha }}" > version.txt
+
+      - name: Create dist directory
+        run: mkdir ../dist
+
+      - name: Package files into tar.gz
+        run: tar --exclude=.git --exclude=.github --exclude=node_modules -czvf ../dist/dist.tar.gz .
+
+      - name: Move dist directory back
+        run: mv ../dist .
+
+      - name: Package files into zip
+        run: zip -r dist/dist.zip . -x "*.git*" "*.github*" "*node_modules*"
+
+      - name: Remove extra directories
+        run: rm -rf vendor
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "GitHubActions@example.com"
+          git pull --no-commit          
+          git add dist/*
+          git add version.txt
+          git commit -m "Add dist.tar.gz and dist.zip"
+          git push
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist

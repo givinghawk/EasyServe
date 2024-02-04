@@ -1,0 +1,34 @@
+name: Composer
+
+on:
+  push:
+    branches: [ "main", "dev" ]
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run composer
+        working-directory: ./
+        run: composer require
+      - name: Commit
+        continue-on-error: true
+        working-directory: ./
+        run: |
+          git add -f ./vendor
+          git config --global user.name 'givinghawk'
+          git config --global user.email 'givinghawk@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git checkout "${GITHUB_REF:11}"
+          git commit -am "Composer"
+          git push
