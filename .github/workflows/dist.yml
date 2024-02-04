@@ -45,8 +45,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "GitHubActions@example.com"
+          git config --global user.name "givinghawk"
+          git config --global user.email "me@givinghawk.dev"
           git pull --no-commit          
           git add dist/*
           git add version.txt
