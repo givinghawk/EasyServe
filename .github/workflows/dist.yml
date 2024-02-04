@@ -17,6 +17,9 @@ jobs:
         run: |
           rm -rf dist
           mkdir dist
+      
+      - name: Composer
+        run: composer require
 
       - name: Delete previous dist directory
         run: rm -rf dist

@@ -1,6 +1,9 @@
 {
     "minimum-stability": "stable",
-    "name": "givinghawk/EasyServe",
+    "name": "givinghawk/easyserve",
     "description": "A simple PHP applicaiton for serving web pages.",
-    "license": "GNU GPLv3"
+    "license": "GNU GPLv3",
+    "require": {
+        "erusev/parsedown": "^1.7"
+    }
 }
