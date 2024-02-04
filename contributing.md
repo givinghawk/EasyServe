@@ -47,4 +47,4 @@ git checkout -b feature/your-feature
 Please follow the existing code style of the project. If applicable, consider running any provided linters or code formatters before submitting your changes.
 
 ## License
-By contributing to EasyServe, you agree that your contributions will be licensed under the GNU GPLv3 License.
+By contributing to EasyServe, you agree that your contributions will be licensed under the MIT License.

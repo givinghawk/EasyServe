@@ -38,7 +38,7 @@ EasyServe comes with a simple configuration file (config.php) where you can cust
 Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) to get started.
 
 ## License
-This project is licensed under the GNU GPLv3 License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 - [Tailwind CSS (CSS for error pages)](https://tailwindcss.com/)

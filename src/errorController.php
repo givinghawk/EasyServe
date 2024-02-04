@@ -48,4 +48,14 @@ class ErrorController
 
         return $errors;
     }
+
+    public function fileExists($path)
+    {
+        if (!is_file(__DIR__.'../' . $path)) {
+            $this->throwError('The page <code class="text-red-400 font-mono bg-gray-700 rounded p-1">' . $path . '</code> was not found.');
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
