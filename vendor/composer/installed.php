@@ -3,7 +3,7 @@
         'name' => 'givinghawk/easyserve',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'fad44f731d43607e9d16404c03d5be8d227c7db3',
+        'reference' => 'fa2cb57e3819612732f9115951b5936af97aaf99',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'givinghawk/easyserve' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'fad44f731d43607e9d16404c03d5be8d227c7db3',
+            'reference' => 'fa2cb57e3819612732f9115951b5936af97aaf99',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
