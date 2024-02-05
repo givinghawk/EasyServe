@@ -3,7 +3,7 @@
         'name' => 'givinghawk/easyserve',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '27e196711b45e9cd810765baab6ffcc1160f00a8',
+        'reference' => 'ee98c3773906535e49ff1595302f8526841ca670',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'erusev/parsedown' => array(
-            'pretty_version' => '1.7.4',
-            'version' => '1.7.4.0',
-            'reference' => 'cb17b6477dfff935958ba01325f2e8a2bfa6dab3',
+            'pretty_version' => '1.7.0',
+            'version' => '1.7.0.0',
+            'reference' => '6678d59be48c4be64eaca6ce70bea48a09488cc2',
             'type' => 'library',
             'install_path' => __DIR__ . '/../erusev/parsedown',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'givinghawk/easyserve' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '27e196711b45e9cd810765baab6ffcc1160f00a8',
+            'reference' => 'ee98c3773906535e49ff1595302f8526841ca670',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
